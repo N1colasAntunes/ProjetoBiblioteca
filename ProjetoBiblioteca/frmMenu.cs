@@ -10,11 +10,21 @@ using System.Windows.Forms;
 
 namespace ProjetoBiblioteca
 {
-    public partial class menu : Form
+    public partial class frmMenu : Form
     {
-        public menu()
+        public frmMenu()
         {
             InitializeComponent();
+        }
+
+        private void btnSair_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
+
+        private void btnCadastro_Click(object sender, EventArgs e)
+        {
+            new frmCadastroUsuario().Show();
         }
     }
 }

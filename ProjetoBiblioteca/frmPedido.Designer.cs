@@ -1,6 +1,6 @@
 ﻿namespace ProjetoBiblioteca
 {
-    partial class menu
+    partial class frmPedido
     {
         /// <summary>
         /// Required designer variable.

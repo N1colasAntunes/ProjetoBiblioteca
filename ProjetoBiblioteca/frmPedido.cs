@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace ProjetoBiblioteca
 {
-    public partial class pedido : Form
+    public partial class frmPedido : Form
     {
-        public pedido()
+        public frmPedido()
         {
             InitializeComponent();
         }
