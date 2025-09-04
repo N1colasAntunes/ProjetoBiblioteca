@@ -19,7 +19,7 @@ namespace ProjetoBiblioteca
 
         private void btnCadastrar_Click(object sender, EventArgs e)
         {
-            if (txtCadUsuario.Text == "" && txtCadSenha.Text == "")
+            if (txtCadUsuario.Text == "" || txtCadSenha.Text == "")
             {
                 MessageBox.Show("Os campos não podem estar vazios");
                 txtCadUsuario.Focus();

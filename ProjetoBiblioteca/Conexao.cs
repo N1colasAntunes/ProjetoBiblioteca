@@ -7,7 +7,7 @@ namespace ProjetoBiblioteca
     {
         //crindo uma instancia
         //instancia é o ato de apelidar, mysqlconection vai receber o nome con
-        MySqlConnection con = new MySqlConnection("Data Source=localhost;Initial Catalog=BDProjeto;user=root;pwd=12345678"); //ísso atras é a string de conexao.
+        MySqlConnection con = new MySqlConnection("Data Source=localhost;Initial Catalog=BDProjetoBiblioteca;user=root;pwd=12345678"); //ísso atras é a string de conexao.
         //data source, local       intial catalog é o nome do banco,    usuario e senha
         //variavel estatica, fixa, eu posso reutilizar, pode dar erro e eu reutilizar ela, ela muda de valor quando eu quiser
         public static string msg;
