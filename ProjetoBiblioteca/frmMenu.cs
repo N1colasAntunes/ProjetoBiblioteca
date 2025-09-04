@@ -26,5 +26,10 @@ namespace ProjetoBiblioteca
         {
             new frmCadastroUsuario().Show();
         }
+
+        private void btnLogin_Click(object sender, EventArgs e)
+        {
+            new frmLogin().Show();
+        }
     }
 }
