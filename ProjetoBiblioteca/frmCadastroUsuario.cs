@@ -28,10 +28,11 @@ namespace ProjetoBiblioteca
             {
                 try
                 {
-                    string sql = "insert into tbLogin(usuario,senha)values(@user,@senha)";
+                    string sql = "insert into tbLogin1(usuario,senha,telefone)values(@user,@senha,@telefone)";
                     MySqlCommand cmd = new MySqlCommand(sql, con.ConnectarBD());
                     cmd.Parameters.Add("@user", MySqlDbType.VarChar).Value = txtCadUsuario.Text;
                     cmd.Parameters.Add("@senha", MySqlDbType.VarChar).Value = txtCadSenha.Text;
+                    cmd.Parameters.Add("@telefone", MySqlDbType.VarChar).Value = mtbCadTelefone.Text;
                     cmd.ExecuteNonQuery();
                     MessageBox.Show("Dados cadastrados com sucesso");
                     con.DesConnectarBD();
