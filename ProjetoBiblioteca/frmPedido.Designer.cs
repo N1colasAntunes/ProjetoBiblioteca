@@ -31,26 +31,30 @@
             this.lblBibliotecaVirtual = new System.Windows.Forms.Label();
             this.cmbTipoLivro = new System.Windows.Forms.ComboBox();
             this.grpOpcionais = new System.Windows.Forms.GroupBox();
-            this.chkAudio = new System.Windows.Forms.CheckBox();
-            this.chk = new System.Windows.Forms.CheckBox();
-            this.checkBox3 = new System.Windows.Forms.CheckBox();
-            this.checkBox4 = new System.Windows.Forms.CheckBox();
-            this.checkBox5 = new System.Windows.Forms.CheckBox();
-            this.label2 = new System.Windows.Forms.Label();
+            this.chkIlustrado = new System.Windows.Forms.CheckBox();
+            this.chkCapaDura = new System.Windows.Forms.CheckBox();
+            this.chkBraile = new System.Windows.Forms.CheckBox();
+            this.chkAutografado = new System.Windows.Forms.CheckBox();
+            this.chkSimplificada = new System.Windows.Forms.CheckBox();
+            this.lblValorTipo = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.textBox4 = new System.Windows.Forms.TextBox();
-            this.label5 = new System.Windows.Forms.Label();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
+            this.lblTotal = new System.Windows.Forms.Label();
+            this.txtValorTipo = new System.Windows.Forms.TextBox();
+            this.txtOpcionais = new System.Windows.Forms.TextBox();
+            this.txtTotal = new System.Windows.Forms.TextBox();
+            this.txtPesquisa = new System.Windows.Forms.TextBox();
+            this.lblPesquisar = new System.Windows.Forms.Label();
+            this.dgvPedido = new System.Windows.Forms.DataGridView();
+            this.btnSalvar = new System.Windows.Forms.Button();
+            this.btnCalcular = new System.Windows.Forms.Button();
+            this.btnLimpar = new System.Windows.Forms.Button();
+            this.btnSair = new System.Windows.Forms.Button();
+            this.chkLinks = new System.Windows.Forms.CheckBox();
+            this.chkBrochura = new System.Windows.Forms.CheckBox();
+            this.txtCodigo = new System.Windows.Forms.TextBox();
+            this.lblCodigo = new System.Windows.Forms.Label();
             this.grpOpcionais.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvPedido)).BeginInit();
             this.SuspendLayout();
             // 
             // lblBibliotecaVirtual
@@ -67,184 +71,239 @@
             // 
             // cmbTipoLivro
             // 
+            this.cmbTipoLivro.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmbTipoLivro.FormattingEnabled = true;
             this.cmbTipoLivro.Location = new System.Drawing.Point(44, 80);
             this.cmbTipoLivro.Name = "cmbTipoLivro";
-            this.cmbTipoLivro.Size = new System.Drawing.Size(121, 21);
-            this.cmbTipoLivro.TabIndex = 1;
+            this.cmbTipoLivro.Size = new System.Drawing.Size(190, 28);
+            this.cmbTipoLivro.TabIndex = 0;
             this.cmbTipoLivro.Text = "Tipo do Livro";
             // 
             // grpOpcionais
             // 
-            this.grpOpcionais.Controls.Add(this.checkBox5);
-            this.grpOpcionais.Controls.Add(this.checkBox4);
-            this.grpOpcionais.Controls.Add(this.checkBox3);
-            this.grpOpcionais.Controls.Add(this.chk);
-            this.grpOpcionais.Controls.Add(this.chkAudio);
-            this.grpOpcionais.Location = new System.Drawing.Point(44, 177);
+            this.grpOpcionais.Controls.Add(this.chkBrochura);
+            this.grpOpcionais.Controls.Add(this.chkLinks);
+            this.grpOpcionais.Controls.Add(this.chkSimplificada);
+            this.grpOpcionais.Controls.Add(this.chkAutografado);
+            this.grpOpcionais.Controls.Add(this.chkBraile);
+            this.grpOpcionais.Controls.Add(this.chkCapaDura);
+            this.grpOpcionais.Controls.Add(this.chkIlustrado);
+            this.grpOpcionais.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.grpOpcionais.Location = new System.Drawing.Point(34, 207);
             this.grpOpcionais.Name = "grpOpcionais";
-            this.grpOpcionais.Size = new System.Drawing.Size(174, 197);
+            this.grpOpcionais.Size = new System.Drawing.Size(200, 213);
             this.grpOpcionais.TabIndex = 2;
             this.grpOpcionais.TabStop = false;
             this.grpOpcionais.Text = "Opcionais";
             // 
-            // chkAudio
+            // chkIlustrado
             // 
-            this.chkAudio.AutoSize = true;
-            this.chkAudio.Location = new System.Drawing.Point(41, 27);
-            this.chkAudio.Name = "chkAudio";
-            this.chkAudio.Size = new System.Drawing.Size(79, 17);
-            this.chkAudio.TabIndex = 0;
-            this.chkAudio.Text = "Audio Livro";
-            this.chkAudio.UseVisualStyleBackColor = true;
+            this.chkIlustrado.AutoSize = true;
+            this.chkIlustrado.Location = new System.Drawing.Point(29, 168);
+            this.chkIlustrado.Name = "chkIlustrado";
+            this.chkIlustrado.Size = new System.Drawing.Size(82, 19);
+            this.chkIlustrado.TabIndex = 0;
+            this.chkIlustrado.Text = "Ilustrado";
+            this.chkIlustrado.UseVisualStyleBackColor = true;
             // 
-            // chk
+            // chkCapaDura
             // 
-            this.chk.AutoSize = true;
-            this.chk.Location = new System.Drawing.Point(38, 50);
-            this.chk.Name = "chk";
-            this.chk.Size = new System.Drawing.Size(80, 17);
-            this.chk.TabIndex = 1;
-            this.chk.Text = "checkBox2";
-            this.chk.UseVisualStyleBackColor = true;
+            this.chkCapaDura.AutoSize = true;
+            this.chkCapaDura.Location = new System.Drawing.Point(29, 30);
+            this.chkCapaDura.Name = "chkCapaDura";
+            this.chkCapaDura.Size = new System.Drawing.Size(92, 19);
+            this.chkCapaDura.TabIndex = 1;
+            this.chkCapaDura.Text = "Capa dura";
+            this.chkCapaDura.UseVisualStyleBackColor = true;
             // 
-            // checkBox3
+            // chkBraile
             // 
-            this.checkBox3.AutoSize = true;
-            this.checkBox3.Location = new System.Drawing.Point(38, 72);
-            this.checkBox3.Name = "checkBox3";
-            this.checkBox3.Size = new System.Drawing.Size(80, 17);
-            this.checkBox3.TabIndex = 2;
-            this.checkBox3.Text = "checkBox3";
-            this.checkBox3.UseVisualStyleBackColor = true;
+            this.chkBraile.AutoSize = true;
+            this.chkBraile.Location = new System.Drawing.Point(29, 76);
+            this.chkBraile.Name = "chkBraile";
+            this.chkBraile.Size = new System.Drawing.Size(122, 19);
+            this.chkBraile.TabIndex = 2;
+            this.chkBraile.Text = "Livro em braile";
+            this.chkBraile.UseVisualStyleBackColor = true;
             // 
-            // checkBox4
+            // chkAutografado
             // 
-            this.checkBox4.AutoSize = true;
-            this.checkBox4.Location = new System.Drawing.Point(46, 80);
-            this.checkBox4.Name = "checkBox4";
-            this.checkBox4.Size = new System.Drawing.Size(80, 17);
-            this.checkBox4.TabIndex = 3;
-            this.checkBox4.Text = "checkBox4";
-            this.checkBox4.UseVisualStyleBackColor = true;
+            this.chkAutografado.AutoSize = true;
+            this.chkAutografado.Location = new System.Drawing.Point(29, 99);
+            this.chkAutografado.Name = "chkAutografado";
+            this.chkAutografado.Size = new System.Drawing.Size(103, 19);
+            this.chkAutografado.TabIndex = 3;
+            this.chkAutografado.Text = "Autografado";
+            this.chkAutografado.UseVisualStyleBackColor = true;
             // 
-            // checkBox5
+            // chkSimplificada
             // 
-            this.checkBox5.AutoSize = true;
-            this.checkBox5.Location = new System.Drawing.Point(54, 88);
-            this.checkBox5.Name = "checkBox5";
-            this.checkBox5.Size = new System.Drawing.Size(80, 17);
-            this.checkBox5.TabIndex = 4;
-            this.checkBox5.Text = "checkBox5";
-            this.checkBox5.UseVisualStyleBackColor = true;
+            this.chkSimplificada.AutoSize = true;
+            this.chkSimplificada.Location = new System.Drawing.Point(29, 122);
+            this.chkSimplificada.Name = "chkSimplificada";
+            this.chkSimplificada.Size = new System.Drawing.Size(152, 19);
+            this.chkSimplificada.TabIndex = 4;
+            this.chkSimplificada.Text = "Versão simplificada";
+            this.chkSimplificada.UseVisualStyleBackColor = true;
             // 
-            // label2
+            // lblValorTipo
             // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(491, 28);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(35, 13);
-            this.label2.TabIndex = 3;
-            this.label2.Text = "label2";
+            this.lblValorTipo.AutoSize = true;
+            this.lblValorTipo.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblValorTipo.Location = new System.Drawing.Point(403, 26);
+            this.lblValorTipo.Name = "lblValorTipo";
+            this.lblValorTipo.Size = new System.Drawing.Size(84, 16);
+            this.lblValorTipo.TabIndex = 3;
+            this.lblValorTipo.Text = "Valor Tipo:";
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(581, 28);
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(528, 26);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(35, 13);
+            this.label3.Size = new System.Drawing.Size(81, 16);
             this.label3.TabIndex = 4;
-            this.label3.Text = "label3";
+            this.label3.Text = "Opcionais:";
             // 
-            // label4
+            // lblTotal
             // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(670, 28);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(35, 13);
-            this.label4.TabIndex = 5;
-            this.label4.Text = "label4";
+            this.lblTotal.AutoSize = true;
+            this.lblTotal.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTotal.Location = new System.Drawing.Point(673, 26);
+            this.lblTotal.Name = "lblTotal";
+            this.lblTotal.Size = new System.Drawing.Size(47, 16);
+            this.lblTotal.TabIndex = 5;
+            this.lblTotal.Text = "Total:";
             // 
-            // textBox1
+            // txtValorTipo
             // 
-            this.textBox1.Location = new System.Drawing.Point(432, 58);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(100, 20);
-            this.textBox1.TabIndex = 6;
+            this.txtValorTipo.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtValorTipo.Location = new System.Drawing.Point(396, 56);
+            this.txtValorTipo.Name = "txtValorTipo";
+            this.txtValorTipo.Size = new System.Drawing.Size(100, 22);
+            this.txtValorTipo.TabIndex = 6;
             // 
-            // textBox2
+            // txtOpcionais
             // 
-            this.textBox2.Location = new System.Drawing.Point(547, 58);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(100, 20);
-            this.textBox2.TabIndex = 7;
+            this.txtOpcionais.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtOpcionais.Location = new System.Drawing.Point(521, 56);
+            this.txtOpcionais.Name = "txtOpcionais";
+            this.txtOpcionais.Size = new System.Drawing.Size(100, 22);
+            this.txtOpcionais.TabIndex = 7;
             // 
-            // textBox3
+            // txtTotal
             // 
-            this.textBox3.Location = new System.Drawing.Point(673, 58);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(100, 20);
-            this.textBox3.TabIndex = 8;
+            this.txtTotal.Location = new System.Drawing.Point(646, 56);
+            this.txtTotal.Name = "txtTotal";
+            this.txtTotal.Size = new System.Drawing.Size(100, 20);
+            this.txtTotal.TabIndex = 8;
             // 
-            // textBox4
+            // txtPesquisa
             // 
-            this.textBox4.Location = new System.Drawing.Point(474, 148);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(100, 20);
-            this.textBox4.TabIndex = 9;
+            this.txtPesquisa.Location = new System.Drawing.Point(584, 166);
+            this.txtPesquisa.Name = "txtPesquisa";
+            this.txtPesquisa.Size = new System.Drawing.Size(154, 20);
+            this.txtPesquisa.TabIndex = 9;
             // 
-            // label5
+            // lblPesquisar
             // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(413, 148);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(35, 13);
-            this.label5.TabIndex = 10;
-            this.label5.Text = "label5";
+            this.lblPesquisar.AutoSize = true;
+            this.lblPesquisar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblPesquisar.Location = new System.Drawing.Point(490, 164);
+            this.lblPesquisar.Name = "lblPesquisar";
+            this.lblPesquisar.Size = new System.Drawing.Size(82, 20);
+            this.lblPesquisar.TabIndex = 10;
+            this.lblPesquisar.Text = "Pesquisa";
             // 
-            // dataGridView1
+            // dgvPedido
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(381, 186);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(240, 150);
-            this.dataGridView1.TabIndex = 11;
+            this.dgvPedido.BackgroundColor = System.Drawing.Color.CornflowerBlue;
+            this.dgvPedido.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvPedido.Location = new System.Drawing.Point(292, 207);
+            this.dgvPedido.Name = "dgvPedido";
+            this.dgvPedido.Size = new System.Drawing.Size(446, 139);
+            this.dgvPedido.TabIndex = 11;
             // 
-            // button1
+            // btnSalvar
             // 
-            this.button1.Location = new System.Drawing.Point(341, 391);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 12;
-            this.button1.Text = "button1";
-            this.button1.UseVisualStyleBackColor = true;
+            this.btnSalvar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSalvar.Location = new System.Drawing.Point(406, 370);
+            this.btnSalvar.Name = "btnSalvar";
+            this.btnSalvar.Size = new System.Drawing.Size(108, 43);
+            this.btnSalvar.TabIndex = 12;
+            this.btnSalvar.Text = "Salvar";
+            this.btnSalvar.UseVisualStyleBackColor = true;
+            this.btnSalvar.Click += new System.EventHandler(this.btnSalvar_Click);
             // 
-            // button2
+            // btnCalcular
             // 
-            this.button2.Location = new System.Drawing.Point(441, 391);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(75, 23);
-            this.button2.TabIndex = 13;
-            this.button2.Text = "button2";
-            this.button2.UseVisualStyleBackColor = true;
+            this.btnCalcular.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCalcular.Location = new System.Drawing.Point(516, 370);
+            this.btnCalcular.Name = "btnCalcular";
+            this.btnCalcular.Size = new System.Drawing.Size(108, 43);
+            this.btnCalcular.TabIndex = 13;
+            this.btnCalcular.Text = "Calcular";
+            this.btnCalcular.UseVisualStyleBackColor = true;
             // 
-            // button3
+            // btnLimpar
             // 
-            this.button3.Location = new System.Drawing.Point(548, 391);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(75, 23);
-            this.button3.TabIndex = 14;
-            this.button3.Text = "button3";
-            this.button3.UseVisualStyleBackColor = true;
+            this.btnLimpar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnLimpar.Location = new System.Drawing.Point(292, 370);
+            this.btnLimpar.Name = "btnLimpar";
+            this.btnLimpar.Size = new System.Drawing.Size(108, 43);
+            this.btnLimpar.TabIndex = 14;
+            this.btnLimpar.Text = "Limpar";
+            this.btnLimpar.UseVisualStyleBackColor = true;
+            this.btnLimpar.Click += new System.EventHandler(this.button3_Click);
             // 
-            // button4
+            // btnSair
             // 
-            this.button4.Location = new System.Drawing.Point(663, 391);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(75, 23);
-            this.button4.TabIndex = 15;
-            this.button4.Text = "button4";
-            this.button4.UseVisualStyleBackColor = true;
+            this.btnSair.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSair.Location = new System.Drawing.Point(630, 370);
+            this.btnSair.Name = "btnSair";
+            this.btnSair.Size = new System.Drawing.Size(108, 43);
+            this.btnSair.TabIndex = 15;
+            this.btnSair.Text = "Sair";
+            this.btnSair.UseVisualStyleBackColor = true;
+            // 
+            // chkLinks
+            // 
+            this.chkLinks.AutoSize = true;
+            this.chkLinks.Location = new System.Drawing.Point(29, 145);
+            this.chkLinks.Name = "chkLinks";
+            this.chkLinks.Size = new System.Drawing.Size(140, 19);
+            this.chkLinks.TabIndex = 5;
+            this.chkLinks.Text = "Com links digitais";
+            this.chkLinks.UseVisualStyleBackColor = true;
+            // 
+            // chkBrochura
+            // 
+            this.chkBrochura.AutoSize = true;
+            this.chkBrochura.Location = new System.Drawing.Point(29, 53);
+            this.chkBrochura.Name = "chkBrochura";
+            this.chkBrochura.Size = new System.Drawing.Size(120, 19);
+            this.chkBrochura.TabIndex = 6;
+            this.chkBrochura.Text = "Capa brochura";
+            this.chkBrochura.UseVisualStyleBackColor = true;
+            // 
+            // txtCodigo
+            // 
+            this.txtCodigo.Location = new System.Drawing.Point(359, 166);
+            this.txtCodigo.Name = "txtCodigo";
+            this.txtCodigo.Size = new System.Drawing.Size(75, 20);
+            this.txtCodigo.TabIndex = 9;
+            this.txtCodigo.TextChanged += new System.EventHandler(this.textBox5_TextChanged);
+            // 
+            // lblCodigo
+            // 
+            this.lblCodigo.AutoSize = true;
+            this.lblCodigo.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblCodigo.Location = new System.Drawing.Point(288, 164);
+            this.lblCodigo.Name = "lblCodigo";
+            this.lblCodigo.Size = new System.Drawing.Size(65, 20);
+            this.lblCodigo.TabIndex = 10;
+            this.lblCodigo.Text = "Codigo";
             // 
             // frmPedido
             // 
@@ -253,19 +312,21 @@
             this.BackColor = System.Drawing.SystemColors.GrayText;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.button4);
-            this.Controls.Add(this.button3);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.button1);
-            this.Controls.Add(this.dataGridView1);
-            this.Controls.Add(this.label5);
-            this.Controls.Add(this.textBox4);
-            this.Controls.Add(this.textBox3);
-            this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.textBox1);
-            this.Controls.Add(this.label4);
+            this.Controls.Add(this.btnSair);
+            this.Controls.Add(this.btnLimpar);
+            this.Controls.Add(this.btnCalcular);
+            this.Controls.Add(this.btnSalvar);
+            this.Controls.Add(this.dgvPedido);
+            this.Controls.Add(this.lblCodigo);
+            this.Controls.Add(this.lblPesquisar);
+            this.Controls.Add(this.txtCodigo);
+            this.Controls.Add(this.txtPesquisa);
+            this.Controls.Add(this.txtTotal);
+            this.Controls.Add(this.txtOpcionais);
+            this.Controls.Add(this.txtValorTipo);
+            this.Controls.Add(this.lblTotal);
             this.Controls.Add(this.label3);
-            this.Controls.Add(this.label2);
+            this.Controls.Add(this.lblValorTipo);
             this.Controls.Add(this.grpOpcionais);
             this.Controls.Add(this.cmbTipoLivro);
             this.Controls.Add(this.lblBibliotecaVirtual);
@@ -276,7 +337,7 @@
             this.Load += new System.EventHandler(this.frmPedido_Load);
             this.grpOpcionais.ResumeLayout(false);
             this.grpOpcionais.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvPedido)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -287,23 +348,27 @@
         private System.Windows.Forms.Label lblBibliotecaVirtual;
         private System.Windows.Forms.ComboBox cmbTipoLivro;
         private System.Windows.Forms.GroupBox grpOpcionais;
-        private System.Windows.Forms.CheckBox checkBox5;
-        private System.Windows.Forms.CheckBox checkBox4;
-        private System.Windows.Forms.CheckBox checkBox3;
-        private System.Windows.Forms.CheckBox chk;
-        private System.Windows.Forms.CheckBox chkAudio;
-        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.CheckBox chkSimplificada;
+        private System.Windows.Forms.CheckBox chkAutografado;
+        private System.Windows.Forms.CheckBox chkBraile;
+        private System.Windows.Forms.CheckBox chkCapaDura;
+        private System.Windows.Forms.CheckBox chkIlustrado;
+        private System.Windows.Forms.Label lblValorTipo;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.TextBox textBox4;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.Label lblTotal;
+        private System.Windows.Forms.TextBox txtValorTipo;
+        private System.Windows.Forms.TextBox txtOpcionais;
+        private System.Windows.Forms.TextBox txtTotal;
+        private System.Windows.Forms.TextBox txtPesquisa;
+        private System.Windows.Forms.Label lblPesquisar;
+        private System.Windows.Forms.DataGridView dgvPedido;
+        private System.Windows.Forms.Button btnSalvar;
+        private System.Windows.Forms.Button btnCalcular;
+        private System.Windows.Forms.Button btnLimpar;
+        private System.Windows.Forms.Button btnSair;
+        private System.Windows.Forms.CheckBox chkBrochura;
+        private System.Windows.Forms.CheckBox chkLinks;
+        private System.Windows.Forms.TextBox txtCodigo;
+        private System.Windows.Forms.Label lblCodigo;
     }
 }
