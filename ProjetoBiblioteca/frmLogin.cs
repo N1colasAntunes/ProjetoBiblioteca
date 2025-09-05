@@ -16,5 +16,10 @@ namespace ProjetoBiblioteca
         {
             InitializeComponent();
         }
+
+        private void lblTituloUsuario_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

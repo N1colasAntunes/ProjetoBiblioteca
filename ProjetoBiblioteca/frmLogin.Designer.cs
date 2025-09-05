@@ -28,20 +28,70 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmLogin));
+            this.btnSair = new System.Windows.Forms.Button();
+            this.btnLogar = new System.Windows.Forms.Button();
+            this.lblTituloUsuario = new System.Windows.Forms.Label();
             this.SuspendLayout();
+            // 
+            // btnSair
+            // 
+            this.btnSair.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSair.ForeColor = System.Drawing.Color.Tomato;
+            this.btnSair.Location = new System.Drawing.Point(494, 361);
+            this.btnSair.Name = "btnSair";
+            this.btnSair.Size = new System.Drawing.Size(165, 65);
+            this.btnSair.TabIndex = 4;
+            this.btnSair.Text = "Sair";
+            this.btnSair.UseVisualStyleBackColor = true;
+            // 
+            // btnLogar
+            // 
+            this.btnLogar.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnLogar.ForeColor = System.Drawing.SystemColors.Highlight;
+            this.btnLogar.Location = new System.Drawing.Point(141, 361);
+            this.btnLogar.Name = "btnLogar";
+            this.btnLogar.Size = new System.Drawing.Size(165, 65);
+            this.btnLogar.TabIndex = 5;
+            this.btnLogar.Text = "Login";
+            this.btnLogar.UseVisualStyleBackColor = true;
+            // 
+            // lblTituloUsuario
+            // 
+            this.lblTituloUsuario.AutoSize = true;
+            this.lblTituloUsuario.BackColor = System.Drawing.Color.Transparent;
+            this.lblTituloUsuario.Font = new System.Drawing.Font("Microsoft Sans Serif", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTituloUsuario.ForeColor = System.Drawing.SystemColors.Highlight;
+            this.lblTituloUsuario.Location = new System.Drawing.Point(328, 37);
+            this.lblTituloUsuario.Name = "lblTituloUsuario";
+            this.lblTituloUsuario.Size = new System.Drawing.Size(147, 55);
+            this.lblTituloUsuario.TabIndex = 7;
+            this.lblTituloUsuario.Text = "Login";
+            this.lblTituloUsuario.Click += new System.EventHandler(this.lblTituloUsuario_Click);
             // 
             // frmLogin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.lblTituloUsuario);
+            this.Controls.Add(this.btnLogar);
+            this.Controls.Add(this.btnSair);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "frmLogin";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Login";
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
         #endregion
+
+        private System.Windows.Forms.Button btnSair;
+        private System.Windows.Forms.Button btnLogar;
+        private System.Windows.Forms.Label lblTituloUsuario;
     }
 }

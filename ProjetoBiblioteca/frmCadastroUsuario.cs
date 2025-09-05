@@ -19,7 +19,7 @@ namespace ProjetoBiblioteca
 
         private void btnCadastrar_Click(object sender, EventArgs e)
         {
-            if (txtCadUsuario.Text == "" || txtCadSenha.Text == "")
+            if (txtCadUsuario.Text == "" || txtCadSenha.Text == "" || mtbCadTelefone.Text == "")
             {
                 MessageBox.Show("Os campos não podem estar vazios");
                 txtCadUsuario.Focus();
@@ -35,6 +35,7 @@ namespace ProjetoBiblioteca
                     cmd.ExecuteNonQuery();
                     MessageBox.Show("Dados cadastrados com sucesso");
                     con.DesConnectarBD();
+                    this.Close();
                 }
                 catch (Exception error)
                 {
@@ -46,6 +47,21 @@ namespace ProjetoBiblioteca
         private void frmCadastroUsuario_Load(object sender, EventArgs e)
         {
 
+        }
+
+        private void txtCadTelefone_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            // Permite apenas dígitos, backspace e alguns símbolos usados em telefone
+            if (!char.IsDigit(e.KeyChar)
+                && e.KeyChar != (char)Keys.Back
+                && e.KeyChar != ' '
+                && e.KeyChar != '('
+                && e.KeyChar != ')'
+                && e.KeyChar != '-'
+                && e.KeyChar != '+')
+            {
+                e.Handled = true; // bloqueia o caractere
+            }
         }
     }
 }
