@@ -11,12 +11,12 @@ CREATE TABLE tbLogin1(
     telefone varchar(20)
 );
 -- CRIANDO AS TABELAS DO BANCO DE DADOS
-CREATE TABLE tbPedidoBiblioteca(
+CREATE TABLE tbPedidoBiblioteca1(
 	codPedido int primary key auto_increment,
     tipoLivro varchar(50),
     valorLivro varchar(50),
-    valorOpcaoo varchar (50),
-    valorTotall varchar(50)
+    valorOpcao varchar (50),
+    valorTotal varchar(50)
 );
 
 -- CONSULTANDO AS TABELAS DO BANCO

@@ -1,5 +1,6 @@
 ﻿using MySql.Data.MySqlClient;
 using System;
+using System.Data;
 using System.Windows.Forms;
 
 namespace ProjetoBiblioteca
@@ -16,10 +17,9 @@ namespace ProjetoBiblioteca
         {
             cmbTipoLivro.DropDownStyle = ComboBoxStyle.DropDownList;
 
-            // Adiciona o placeholder como primeiro item
+            //Adiciona o placeholder como primeiro item
             cmbTipoLivro.Items.Add("Selecione um livro");
 
-            // Adiciona os livros
             cmbTipoLivro.Items.Add("Dom Quixote");
             cmbTipoLivro.Items.Add("Orgulo e Preconceito");
             cmbTipoLivro.Items.Add("O Pequeno Principe");
@@ -42,6 +42,8 @@ namespace ProjetoBiblioteca
             chkLinks.Checked = false;
             chkIlustrado.Checked = false;
 
+            txtPesquisar.Clear();
+            txtCodigo.Clear();
             txtOpcionais.Clear();
             txtValorTipo.Clear();
             txtTotal.Clear();
@@ -123,7 +125,7 @@ namespace ProjetoBiblioteca
             else if (cmbTipoLivro.SelectedIndex == 6)
                 valorTipoLivro = 60;
             else if (cmbTipoLivro.SelectedIndex == 7)
-                valorTipoLivro = 70; // Romeu e Julieta
+                valorTipoLivro = 70;
 
             if (chkCapaDura.Checked == true)
             {
@@ -163,7 +165,95 @@ namespace ProjetoBiblioteca
 
         private void btnSair_Click(object sender, EventArgs e)
         {
-            this.Close();
+            DialogResult sair = MessageBox.Show("Deseja sair ?", "Sair", MessageBoxButtons.YesNo, MessageBoxIcon.Information);
+            if (sair == DialogResult.No)
+            {
+                frmPedido ped = new frmPedido();
+                ped.Show();
+                this.Hide();
+            }
+            else
+            {
+                Application.Exit();
+            }
+        }
+
+        private void dgvPedido_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            CarregarPedidos();
+        }
+        public void CarregarPedidos()
+        {
+            try
+            {
+                if (dgvPedido.SelectedRows.Count > 0) // se tem linha selecionada
+                {
+                    txtCodigo.Text = dgvPedido.SelectedRows[0].Cells[0].Value.ToString();
+                    cmbTipoLivro.Text = dgvPedido.SelectedRows[0].Cells[1].Value.ToString();
+                    txtValorTipo.Text = dgvPedido.SelectedRows[0].Cells[2].Value.ToString();
+                    txtOpcionais.Text = dgvPedido.SelectedRows[0].Cells[3].Value.ToString();
+                    txtTotal.Text = dgvPedido.SelectedRows[0].Cells[4].Value.ToString();
+                }
+                else if (dgvPedido.CurrentRow != null) // se só tem célula clicada
+                {
+                    txtCodigo.Text = dgvPedido.CurrentRow.Cells[0].Value.ToString();
+                    cmbTipoLivro.Text = dgvPedido.CurrentRow.Cells[1].Value.ToString();
+                    txtValorTipo.Text = dgvPedido.CurrentRow.Cells[2].Value.ToString();
+                    txtOpcionais.Text = dgvPedido.CurrentRow.Cells[3].Value.ToString();
+                    txtTotal.Text = dgvPedido.CurrentRow.Cells[4].Value.ToString();
+                }
+            }
+            catch (Exception error)
+            {
+                MessageBox.Show("Erro ao carregar dados: " + error.Message);
+            }
+        }
+
+        private void txtPesquisa_TextChanged(object sender, EventArgs e)
+        {
+            if (txtPesquisar.Text != "")
+            {
+                try
+                {
+                    con.ConnectarBD();
+                    MySqlCommand cmd = new MySqlCommand();
+                    cmd.CommandText = "select * from tbPedidoBiblioteca";
+
+                    cmd.Connection = con.ConnectarBD();
+                    MySqlDataAdapter da = new MySqlDataAdapter();
+                    DataTable dt = new DataTable();
+                    da.SelectCommand = cmd;
+                    da.Fill(dt);
+                    dgvPedido.DataSource = dt;
+                    con.DesConnectarBD();
+                }
+                catch (Exception error)
+                {
+                    MessageBox.Show(error.Message);
+                }
+            }
+            else
+            {
+                //deixa o datagrid limpo
+                dgvPedido.DataSource = null;
+            }
+        }
+
+        private void chkCapaDura_CheckedChanged_1(object sender, EventArgs e)
+        {
+            if (chkCapaDura.Checked)
+                chkBrochura.Checked = false;
+        }
+
+        private void chkBrochura_CheckedChanged_1(object sender, EventArgs e)
+        {
+            if (chkBrochura.Checked)
+                chkCapaDura.Checked = false;
+        }
+
+        private void lblPesquisar_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

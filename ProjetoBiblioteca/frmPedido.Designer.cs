@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmPedido));
             this.lblBibliotecaVirtual = new System.Windows.Forms.Label();
             this.cmbTipoLivro = new System.Windows.Forms.ComboBox();
             this.grpOpcionais = new System.Windows.Forms.GroupBox();
@@ -42,7 +43,7 @@
             this.txtValorTipo = new System.Windows.Forms.TextBox();
             this.txtOpcionais = new System.Windows.Forms.TextBox();
             this.txtTotal = new System.Windows.Forms.TextBox();
-            this.txtPesquisa = new System.Windows.Forms.TextBox();
+            this.txtPesquisar = new System.Windows.Forms.TextBox();
             this.lblPesquisar = new System.Windows.Forms.Label();
             this.dgvPedido = new System.Windows.Forms.DataGridView();
             this.btnSalvar = new System.Windows.Forms.Button();
@@ -51,8 +52,8 @@
             this.btnSair = new System.Windows.Forms.Button();
             this.chkLinks = new System.Windows.Forms.CheckBox();
             this.chkBrochura = new System.Windows.Forms.CheckBox();
-            this.txtCodigo = new System.Windows.Forms.TextBox();
             this.lblCodigo = new System.Windows.Forms.Label();
+            this.txtCodigo = new System.Windows.Forms.TextBox();
             this.grpOpcionais.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvPedido)).BeginInit();
             this.SuspendLayout();
@@ -80,6 +81,7 @@
             // 
             // grpOpcionais
             // 
+            this.grpOpcionais.BackColor = System.Drawing.Color.Transparent;
             this.grpOpcionais.Controls.Add(this.chkBrochura);
             this.grpOpcionais.Controls.Add(this.chkLinks);
             this.grpOpcionais.Controls.Add(this.chkSimplificada);
@@ -88,6 +90,7 @@
             this.grpOpcionais.Controls.Add(this.chkCapaDura);
             this.grpOpcionais.Controls.Add(this.chkIlustrado);
             this.grpOpcionais.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.grpOpcionais.ForeColor = System.Drawing.SystemColors.Window;
             this.grpOpcionais.Location = new System.Drawing.Point(34, 207);
             this.grpOpcionais.Name = "grpOpcionais";
             this.grpOpcionais.Size = new System.Drawing.Size(200, 213);
@@ -114,6 +117,7 @@
             this.chkCapaDura.TabIndex = 1;
             this.chkCapaDura.Text = "Capa dura";
             this.chkCapaDura.UseVisualStyleBackColor = true;
+            this.chkCapaDura.CheckedChanged += new System.EventHandler(this.chkCapaDura_CheckedChanged_1);
             // 
             // chkBraile
             // 
@@ -148,17 +152,21 @@
             // lblValorTipo
             // 
             this.lblValorTipo.AutoSize = true;
+            this.lblValorTipo.BackColor = System.Drawing.Color.Transparent;
             this.lblValorTipo.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblValorTipo.ForeColor = System.Drawing.SystemColors.Window;
             this.lblValorTipo.Location = new System.Drawing.Point(414, 38);
             this.lblValorTipo.Name = "lblValorTipo";
-            this.lblValorTipo.Size = new System.Drawing.Size(84, 16);
+            this.lblValorTipo.Size = new System.Drawing.Size(86, 16);
             this.lblValorTipo.TabIndex = 3;
-            this.lblValorTipo.Text = "Valor Tipo:";
+            this.lblValorTipo.Text = "Valor Livro:";
             // 
             // label3
             // 
             this.label3.AutoSize = true;
+            this.label3.BackColor = System.Drawing.Color.Transparent;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.ForeColor = System.Drawing.SystemColors.Window;
             this.label3.Location = new System.Drawing.Point(539, 38);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(81, 16);
@@ -168,7 +176,9 @@
             // lblTotal
             // 
             this.lblTotal.AutoSize = true;
+            this.lblTotal.BackColor = System.Drawing.Color.Transparent;
             this.lblTotal.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTotal.ForeColor = System.Drawing.Color.White;
             this.lblTotal.Location = new System.Drawing.Point(684, 38);
             this.lblTotal.Name = "lblTotal";
             this.lblTotal.Size = new System.Drawing.Size(47, 16);
@@ -180,6 +190,7 @@
             this.txtValorTipo.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtValorTipo.Location = new System.Drawing.Point(407, 68);
             this.txtValorTipo.Name = "txtValorTipo";
+            this.txtValorTipo.ReadOnly = true;
             this.txtValorTipo.Size = new System.Drawing.Size(100, 22);
             this.txtValorTipo.TabIndex = 6;
             // 
@@ -188,6 +199,7 @@
             this.txtOpcionais.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtOpcionais.Location = new System.Drawing.Point(532, 68);
             this.txtOpcionais.Name = "txtOpcionais";
+            this.txtOpcionais.ReadOnly = true;
             this.txtOpcionais.Size = new System.Drawing.Size(100, 22);
             this.txtOpcionais.TabIndex = 7;
             // 
@@ -196,35 +208,41 @@
             this.txtTotal.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtTotal.Location = new System.Drawing.Point(659, 68);
             this.txtTotal.Name = "txtTotal";
+            this.txtTotal.ReadOnly = true;
             this.txtTotal.Size = new System.Drawing.Size(100, 22);
             this.txtTotal.TabIndex = 8;
             // 
-            // txtPesquisa
+            // txtPesquisar
             // 
-            this.txtPesquisa.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtPesquisa.Location = new System.Drawing.Point(584, 166);
-            this.txtPesquisa.Name = "txtPesquisa";
-            this.txtPesquisa.Size = new System.Drawing.Size(154, 22);
-            this.txtPesquisa.TabIndex = 9;
+            this.txtPesquisar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtPesquisar.Location = new System.Drawing.Point(582, 171);
+            this.txtPesquisar.Name = "txtPesquisar";
+            this.txtPesquisar.Size = new System.Drawing.Size(154, 22);
+            this.txtPesquisar.TabIndex = 9;
+            this.txtPesquisar.TextChanged += new System.EventHandler(this.txtPesquisa_TextChanged);
             // 
             // lblPesquisar
             // 
             this.lblPesquisar.AutoSize = true;
+            this.lblPesquisar.BackColor = System.Drawing.Color.Transparent;
             this.lblPesquisar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblPesquisar.Location = new System.Drawing.Point(490, 164);
+            this.lblPesquisar.ForeColor = System.Drawing.SystemColors.Info;
+            this.lblPesquisar.Location = new System.Drawing.Point(489, 171);
             this.lblPesquisar.Name = "lblPesquisar";
             this.lblPesquisar.Size = new System.Drawing.Size(82, 20);
             this.lblPesquisar.TabIndex = 10;
-            this.lblPesquisar.Text = "Pesquisa";
+            this.lblPesquisar.Text = "Carrinho:";
+            this.lblPesquisar.Click += new System.EventHandler(this.lblPesquisar_Click);
             // 
             // dgvPedido
             // 
-            this.dgvPedido.BackgroundColor = System.Drawing.Color.CornflowerBlue;
+            this.dgvPedido.BackgroundColor = System.Drawing.Color.SteelBlue;
             this.dgvPedido.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvPedido.Location = new System.Drawing.Point(292, 207);
             this.dgvPedido.Name = "dgvPedido";
             this.dgvPedido.Size = new System.Drawing.Size(446, 139);
             this.dgvPedido.TabIndex = 11;
+            this.dgvPedido.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvPedido_CellContentClick);
             // 
             // btnSalvar
             // 
@@ -240,7 +258,7 @@
             // btnCalcular
             // 
             this.btnCalcular.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCalcular.Location = new System.Drawing.Point(516, 370);
+            this.btnCalcular.Location = new System.Drawing.Point(292, 370);
             this.btnCalcular.Name = "btnCalcular";
             this.btnCalcular.Size = new System.Drawing.Size(108, 43);
             this.btnCalcular.TabIndex = 13;
@@ -251,7 +269,7 @@
             // btnLimpar
             // 
             this.btnLimpar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnLimpar.Location = new System.Drawing.Point(292, 370);
+            this.btnLimpar.Location = new System.Drawing.Point(516, 370);
             this.btnLimpar.Name = "btnLimpar";
             this.btnLimpar.Size = new System.Drawing.Size(108, 43);
             this.btnLimpar.TabIndex = 14;
@@ -289,42 +307,45 @@
             this.chkBrochura.TabIndex = 6;
             this.chkBrochura.Text = "Capa brochura";
             this.chkBrochura.UseVisualStyleBackColor = true;
-            // 
-            // txtCodigo
-            // 
-            this.txtCodigo.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtCodigo.Location = new System.Drawing.Point(359, 166);
-            this.txtCodigo.Name = "txtCodigo";
-            this.txtCodigo.Size = new System.Drawing.Size(75, 22);
-            this.txtCodigo.TabIndex = 9;
-            this.txtCodigo.TextChanged += new System.EventHandler(this.textBox5_TextChanged);
+            this.chkBrochura.CheckedChanged += new System.EventHandler(this.chkBrochura_CheckedChanged_1);
             // 
             // lblCodigo
             // 
             this.lblCodigo.AutoSize = true;
+            this.lblCodigo.BackColor = System.Drawing.Color.Transparent;
             this.lblCodigo.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblCodigo.Location = new System.Drawing.Point(288, 164);
+            this.lblCodigo.ForeColor = System.Drawing.SystemColors.Info;
+            this.lblCodigo.Location = new System.Drawing.Point(288, 171);
             this.lblCodigo.Name = "lblCodigo";
-            this.lblCodigo.Size = new System.Drawing.Size(65, 20);
-            this.lblCodigo.TabIndex = 10;
-            this.lblCodigo.Text = "Codigo";
+            this.lblCodigo.Size = new System.Drawing.Size(70, 20);
+            this.lblCodigo.TabIndex = 17;
+            this.lblCodigo.Text = "Codigo:";
+            // 
+            // txtCodigo
+            // 
+            this.txtCodigo.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtCodigo.Location = new System.Drawing.Point(364, 171);
+            this.txtCodigo.Name = "txtCodigo";
+            this.txtCodigo.Size = new System.Drawing.Size(97, 22);
+            this.txtCodigo.TabIndex = 16;
             // 
             // frmPedido
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.GrayText;
+            this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.lblCodigo);
+            this.Controls.Add(this.txtCodigo);
             this.Controls.Add(this.btnSair);
             this.Controls.Add(this.btnLimpar);
             this.Controls.Add(this.btnCalcular);
             this.Controls.Add(this.btnSalvar);
             this.Controls.Add(this.dgvPedido);
-            this.Controls.Add(this.lblCodigo);
             this.Controls.Add(this.lblPesquisar);
-            this.Controls.Add(this.txtCodigo);
-            this.Controls.Add(this.txtPesquisa);
+            this.Controls.Add(this.txtPesquisar);
             this.Controls.Add(this.txtTotal);
             this.Controls.Add(this.txtOpcionais);
             this.Controls.Add(this.txtValorTipo);
@@ -363,7 +384,7 @@
         private System.Windows.Forms.TextBox txtValorTipo;
         private System.Windows.Forms.TextBox txtOpcionais;
         private System.Windows.Forms.TextBox txtTotal;
-        private System.Windows.Forms.TextBox txtPesquisa;
+        private System.Windows.Forms.TextBox txtPesquisar;
         private System.Windows.Forms.Label lblPesquisar;
         private System.Windows.Forms.DataGridView dgvPedido;
         private System.Windows.Forms.Button btnSalvar;
@@ -372,7 +393,7 @@
         private System.Windows.Forms.Button btnSair;
         private System.Windows.Forms.CheckBox chkBrochura;
         private System.Windows.Forms.CheckBox chkLinks;
-        private System.Windows.Forms.TextBox txtCodigo;
         private System.Windows.Forms.Label lblCodigo;
+        private System.Windows.Forms.TextBox txtCodigo;
     }
 }
