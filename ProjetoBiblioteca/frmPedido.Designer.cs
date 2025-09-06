@@ -32,11 +32,13 @@
             this.lblBibliotecaVirtual = new System.Windows.Forms.Label();
             this.cmbTipoLivro = new System.Windows.Forms.ComboBox();
             this.grpOpcionais = new System.Windows.Forms.GroupBox();
-            this.chkIlustrado = new System.Windows.Forms.CheckBox();
-            this.chkCapaDura = new System.Windows.Forms.CheckBox();
-            this.chkBraile = new System.Windows.Forms.CheckBox();
-            this.chkAutografado = new System.Windows.Forms.CheckBox();
+            this.chkBrochura = new System.Windows.Forms.CheckBox();
+            this.chkLinks = new System.Windows.Forms.CheckBox();
             this.chkSimplificada = new System.Windows.Forms.CheckBox();
+            this.chkAutografado = new System.Windows.Forms.CheckBox();
+            this.chkBraile = new System.Windows.Forms.CheckBox();
+            this.chkCapaDura = new System.Windows.Forms.CheckBox();
+            this.chkIlustrado = new System.Windows.Forms.CheckBox();
             this.lblValorTipo = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.lblTotal = new System.Windows.Forms.Label();
@@ -50,8 +52,6 @@
             this.btnCalcular = new System.Windows.Forms.Button();
             this.btnLimpar = new System.Windows.Forms.Button();
             this.btnSair = new System.Windows.Forms.Button();
-            this.chkLinks = new System.Windows.Forms.CheckBox();
-            this.chkBrochura = new System.Windows.Forms.CheckBox();
             this.lblCodigo = new System.Windows.Forms.Label();
             this.txtCodigo = new System.Windows.Forms.TextBox();
             this.grpOpcionais.SuspendLayout();
@@ -98,15 +98,56 @@
             this.grpOpcionais.TabStop = false;
             this.grpOpcionais.Text = "Opcionais";
             // 
-            // chkIlustrado
+            // chkBrochura
             // 
-            this.chkIlustrado.AutoSize = true;
-            this.chkIlustrado.Location = new System.Drawing.Point(29, 168);
-            this.chkIlustrado.Name = "chkIlustrado";
-            this.chkIlustrado.Size = new System.Drawing.Size(82, 19);
-            this.chkIlustrado.TabIndex = 0;
-            this.chkIlustrado.Text = "Ilustrado";
-            this.chkIlustrado.UseVisualStyleBackColor = true;
+            this.chkBrochura.AutoSize = true;
+            this.chkBrochura.Location = new System.Drawing.Point(29, 53);
+            this.chkBrochura.Name = "chkBrochura";
+            this.chkBrochura.Size = new System.Drawing.Size(120, 19);
+            this.chkBrochura.TabIndex = 6;
+            this.chkBrochura.Text = "Capa brochura";
+            this.chkBrochura.UseVisualStyleBackColor = true;
+            this.chkBrochura.CheckedChanged += new System.EventHandler(this.chkBrochura_CheckedChanged_1);
+            // 
+            // chkLinks
+            // 
+            this.chkLinks.AutoSize = true;
+            this.chkLinks.Location = new System.Drawing.Point(29, 145);
+            this.chkLinks.Name = "chkLinks";
+            this.chkLinks.Size = new System.Drawing.Size(140, 19);
+            this.chkLinks.TabIndex = 5;
+            this.chkLinks.Text = "Com links digitais";
+            this.chkLinks.UseVisualStyleBackColor = true;
+            // 
+            // chkSimplificada
+            // 
+            this.chkSimplificada.AutoSize = true;
+            this.chkSimplificada.Location = new System.Drawing.Point(29, 122);
+            this.chkSimplificada.Name = "chkSimplificada";
+            this.chkSimplificada.Size = new System.Drawing.Size(152, 19);
+            this.chkSimplificada.TabIndex = 4;
+            this.chkSimplificada.Text = "Versão simplificada";
+            this.chkSimplificada.UseVisualStyleBackColor = true;
+            // 
+            // chkAutografado
+            // 
+            this.chkAutografado.AutoSize = true;
+            this.chkAutografado.Location = new System.Drawing.Point(29, 99);
+            this.chkAutografado.Name = "chkAutografado";
+            this.chkAutografado.Size = new System.Drawing.Size(103, 19);
+            this.chkAutografado.TabIndex = 3;
+            this.chkAutografado.Text = "Autografado";
+            this.chkAutografado.UseVisualStyleBackColor = true;
+            // 
+            // chkBraile
+            // 
+            this.chkBraile.AutoSize = true;
+            this.chkBraile.Location = new System.Drawing.Point(29, 76);
+            this.chkBraile.Name = "chkBraile";
+            this.chkBraile.Size = new System.Drawing.Size(122, 19);
+            this.chkBraile.TabIndex = 2;
+            this.chkBraile.Text = "Livro em braile";
+            this.chkBraile.UseVisualStyleBackColor = true;
             // 
             // chkCapaDura
             // 
@@ -119,35 +160,15 @@
             this.chkCapaDura.UseVisualStyleBackColor = true;
             this.chkCapaDura.CheckedChanged += new System.EventHandler(this.chkCapaDura_CheckedChanged_1);
             // 
-            // chkBraile
+            // chkIlustrado
             // 
-            this.chkBraile.AutoSize = true;
-            this.chkBraile.Location = new System.Drawing.Point(29, 76);
-            this.chkBraile.Name = "chkBraile";
-            this.chkBraile.Size = new System.Drawing.Size(122, 19);
-            this.chkBraile.TabIndex = 2;
-            this.chkBraile.Text = "Livro em braile";
-            this.chkBraile.UseVisualStyleBackColor = true;
-            // 
-            // chkAutografado
-            // 
-            this.chkAutografado.AutoSize = true;
-            this.chkAutografado.Location = new System.Drawing.Point(29, 99);
-            this.chkAutografado.Name = "chkAutografado";
-            this.chkAutografado.Size = new System.Drawing.Size(103, 19);
-            this.chkAutografado.TabIndex = 3;
-            this.chkAutografado.Text = "Autografado";
-            this.chkAutografado.UseVisualStyleBackColor = true;
-            // 
-            // chkSimplificada
-            // 
-            this.chkSimplificada.AutoSize = true;
-            this.chkSimplificada.Location = new System.Drawing.Point(29, 122);
-            this.chkSimplificada.Name = "chkSimplificada";
-            this.chkSimplificada.Size = new System.Drawing.Size(152, 19);
-            this.chkSimplificada.TabIndex = 4;
-            this.chkSimplificada.Text = "Versão simplificada";
-            this.chkSimplificada.UseVisualStyleBackColor = true;
+            this.chkIlustrado.AutoSize = true;
+            this.chkIlustrado.Location = new System.Drawing.Point(29, 168);
+            this.chkIlustrado.Name = "chkIlustrado";
+            this.chkIlustrado.Size = new System.Drawing.Size(82, 19);
+            this.chkIlustrado.TabIndex = 0;
+            this.chkIlustrado.Text = "Ilustrado";
+            this.chkIlustrado.UseVisualStyleBackColor = true;
             // 
             // lblValorTipo
             // 
@@ -240,6 +261,7 @@
             this.dgvPedido.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvPedido.Location = new System.Drawing.Point(292, 207);
             this.dgvPedido.Name = "dgvPedido";
+            this.dgvPedido.ReadOnly = true;
             this.dgvPedido.Size = new System.Drawing.Size(446, 139);
             this.dgvPedido.TabIndex = 11;
             this.dgvPedido.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvPedido_CellContentClick);
@@ -288,27 +310,6 @@
             this.btnSair.UseVisualStyleBackColor = true;
             this.btnSair.Click += new System.EventHandler(this.btnSair_Click);
             // 
-            // chkLinks
-            // 
-            this.chkLinks.AutoSize = true;
-            this.chkLinks.Location = new System.Drawing.Point(29, 145);
-            this.chkLinks.Name = "chkLinks";
-            this.chkLinks.Size = new System.Drawing.Size(140, 19);
-            this.chkLinks.TabIndex = 5;
-            this.chkLinks.Text = "Com links digitais";
-            this.chkLinks.UseVisualStyleBackColor = true;
-            // 
-            // chkBrochura
-            // 
-            this.chkBrochura.AutoSize = true;
-            this.chkBrochura.Location = new System.Drawing.Point(29, 53);
-            this.chkBrochura.Name = "chkBrochura";
-            this.chkBrochura.Size = new System.Drawing.Size(120, 19);
-            this.chkBrochura.TabIndex = 6;
-            this.chkBrochura.Text = "Capa brochura";
-            this.chkBrochura.UseVisualStyleBackColor = true;
-            this.chkBrochura.CheckedChanged += new System.EventHandler(this.chkBrochura_CheckedChanged_1);
-            // 
             // lblCodigo
             // 
             this.lblCodigo.AutoSize = true;
@@ -326,6 +327,7 @@
             this.txtCodigo.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtCodigo.Location = new System.Drawing.Point(364, 171);
             this.txtCodigo.Name = "txtCodigo";
+            this.txtCodigo.ReadOnly = true;
             this.txtCodigo.Size = new System.Drawing.Size(97, 22);
             this.txtCodigo.TabIndex = 16;
             // 

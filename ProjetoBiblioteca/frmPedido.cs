@@ -82,7 +82,7 @@ namespace ProjetoBiblioteca
                     cmd.Parameters.Add("@total", MySqlDbType.Text).Value = txtTotal.Text;
                     cmd.ExecuteNonQuery();
 
-                    MessageBox.Show("Dados cadastrados com Sucesso !!!");
+                    MessageBox.Show("Compra cadastrada com SUCESSO!");
                     cmbTipoLivro.Text = "";
                     txtValorTipo.Text = "";
                     txtOpcionais.Text = "";

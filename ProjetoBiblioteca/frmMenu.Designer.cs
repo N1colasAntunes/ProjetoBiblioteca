@@ -38,8 +38,8 @@
             // btnCadastro
             // 
             this.btnCadastro.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCadastro.ForeColor = System.Drawing.Color.LimeGreen;
-            this.btnCadastro.Location = new System.Drawing.Point(110, 276);
+            this.btnCadastro.ForeColor = System.Drawing.Color.Green;
+            this.btnCadastro.Location = new System.Drawing.Point(103, 276);
             this.btnCadastro.Name = "btnCadastro";
             this.btnCadastro.Size = new System.Drawing.Size(165, 65);
             this.btnCadastro.TabIndex = 0;
@@ -64,7 +64,8 @@
             this.lblMenu.AutoSize = true;
             this.lblMenu.BackColor = System.Drawing.Color.Transparent;
             this.lblMenu.Font = new System.Drawing.Font("Microsoft Sans Serif", 48F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblMenu.Location = new System.Drawing.Point(297, 86);
+            this.lblMenu.ForeColor = System.Drawing.Color.White;
+            this.lblMenu.Location = new System.Drawing.Point(316, 87);
             this.lblMenu.Name = "lblMenu";
             this.lblMenu.Size = new System.Drawing.Size(197, 73);
             this.lblMenu.TabIndex = 2;
