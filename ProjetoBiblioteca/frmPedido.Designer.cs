@@ -77,7 +77,6 @@
             this.cmbTipoLivro.Name = "cmbTipoLivro";
             this.cmbTipoLivro.Size = new System.Drawing.Size(190, 28);
             this.cmbTipoLivro.TabIndex = 0;
-            this.cmbTipoLivro.Text = "Tipo do Livro";
             // 
             // grpOpcionais
             // 
@@ -150,7 +149,7 @@
             // 
             this.lblValorTipo.AutoSize = true;
             this.lblValorTipo.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblValorTipo.Location = new System.Drawing.Point(403, 26);
+            this.lblValorTipo.Location = new System.Drawing.Point(414, 38);
             this.lblValorTipo.Name = "lblValorTipo";
             this.lblValorTipo.Size = new System.Drawing.Size(84, 16);
             this.lblValorTipo.TabIndex = 3;
@@ -160,7 +159,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(528, 26);
+            this.label3.Location = new System.Drawing.Point(539, 38);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(81, 16);
             this.label3.TabIndex = 4;
@@ -170,7 +169,7 @@
             // 
             this.lblTotal.AutoSize = true;
             this.lblTotal.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTotal.Location = new System.Drawing.Point(673, 26);
+            this.lblTotal.Location = new System.Drawing.Point(684, 38);
             this.lblTotal.Name = "lblTotal";
             this.lblTotal.Size = new System.Drawing.Size(47, 16);
             this.lblTotal.TabIndex = 5;
@@ -179,7 +178,7 @@
             // txtValorTipo
             // 
             this.txtValorTipo.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtValorTipo.Location = new System.Drawing.Point(396, 56);
+            this.txtValorTipo.Location = new System.Drawing.Point(407, 68);
             this.txtValorTipo.Name = "txtValorTipo";
             this.txtValorTipo.Size = new System.Drawing.Size(100, 22);
             this.txtValorTipo.TabIndex = 6;
@@ -187,23 +186,25 @@
             // txtOpcionais
             // 
             this.txtOpcionais.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtOpcionais.Location = new System.Drawing.Point(521, 56);
+            this.txtOpcionais.Location = new System.Drawing.Point(532, 68);
             this.txtOpcionais.Name = "txtOpcionais";
             this.txtOpcionais.Size = new System.Drawing.Size(100, 22);
             this.txtOpcionais.TabIndex = 7;
             // 
             // txtTotal
             // 
-            this.txtTotal.Location = new System.Drawing.Point(646, 56);
+            this.txtTotal.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtTotal.Location = new System.Drawing.Point(659, 68);
             this.txtTotal.Name = "txtTotal";
-            this.txtTotal.Size = new System.Drawing.Size(100, 20);
+            this.txtTotal.Size = new System.Drawing.Size(100, 22);
             this.txtTotal.TabIndex = 8;
             // 
             // txtPesquisa
             // 
+            this.txtPesquisa.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtPesquisa.Location = new System.Drawing.Point(584, 166);
             this.txtPesquisa.Name = "txtPesquisa";
-            this.txtPesquisa.Size = new System.Drawing.Size(154, 20);
+            this.txtPesquisa.Size = new System.Drawing.Size(154, 22);
             this.txtPesquisa.TabIndex = 9;
             // 
             // lblPesquisar
@@ -245,6 +246,7 @@
             this.btnCalcular.TabIndex = 13;
             this.btnCalcular.Text = "Calcular";
             this.btnCalcular.UseVisualStyleBackColor = true;
+            this.btnCalcular.Click += new System.EventHandler(this.btnCalcular_Click);
             // 
             // btnLimpar
             // 
@@ -266,6 +268,7 @@
             this.btnSair.TabIndex = 15;
             this.btnSair.Text = "Sair";
             this.btnSair.UseVisualStyleBackColor = true;
+            this.btnSair.Click += new System.EventHandler(this.btnSair_Click);
             // 
             // chkLinks
             // 
@@ -289,9 +292,10 @@
             // 
             // txtCodigo
             // 
+            this.txtCodigo.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtCodigo.Location = new System.Drawing.Point(359, 166);
             this.txtCodigo.Name = "txtCodigo";
-            this.txtCodigo.Size = new System.Drawing.Size(75, 20);
+            this.txtCodigo.Size = new System.Drawing.Size(75, 22);
             this.txtCodigo.TabIndex = 9;
             this.txtCodigo.TextChanged += new System.EventHandler(this.textBox5_TextChanged);
             // 

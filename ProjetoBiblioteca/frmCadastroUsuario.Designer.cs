@@ -57,6 +57,7 @@
             this.txtCadSenha.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtCadSenha.Location = new System.Drawing.Point(352, 234);
             this.txtCadSenha.Name = "txtCadSenha";
+            this.txtCadSenha.PasswordChar = '*';
             this.txtCadSenha.Size = new System.Drawing.Size(259, 29);
             this.txtCadSenha.TabIndex = 1;
             // 
